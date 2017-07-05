@@ -1,0 +1,39 @@
+{
+  "name": "create-knockout-app",
+  "version": "1.0.0",
+  "description": "Knockout JS starter kit",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
+    "pretty": "prettier --print-width 200 --single-quote --use-tabs --tab-width 2 --no-semi --write src/**/*.js",
+    "test": "mocha tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregduncan/bootstarter.git"
+  },
+  "author": "Greg Duncan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gregduncan/bootstarter/issues"
+  },
+  "homepage": "https://github.com/gregduncan/bootstarter#readme",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.5.2",
+    "chai": "^4.0.2",
+    "chai-http": "^3.0.0",
+    "chalk": "^2.0.1",
+    "eslint": "^4.1.1",
+    "eslint-loader": "^1.8.0",
+    "mocha": "^3.4.2",
+    "prettier": "^1.5.2",
+    "webpack": "^3.0.0",
+    "webpack-console-printer-plugin": "^1.0.0",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
+    "knockout": "^3.4.2"
+  }
+}
