@@ -1,6 +1,8 @@
 import ko from 'knockout'
-import vm from './components/test'
+import vm from './components/message-editor'
 
-ko.applyBindings(vm)
+ko.components.register('message-editor', vm);
+
+ko.applyBindings()
 
 
