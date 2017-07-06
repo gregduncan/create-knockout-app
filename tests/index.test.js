@@ -5,7 +5,7 @@ const expect = chai.expect()
 
 chai.use(chaiHttp);
 
-describe('## Basic Test', () => {
+describe('## Basic load test', () => {
 
     describe('# Home page', () => {
         it('Should return 200', (done) => {

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
     "pretty": "prettier --print-width 200 --single-quote --use-tabs --tab-width 2 --no-semi --write src/**/*.js",
-    "test": "mocha tests/*.js"
+    "test": "mocha --compilers js:babel-core/register tests/*.js"
   },
   "repository": {
     "type": "git",
