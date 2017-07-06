@@ -11,6 +11,10 @@ export default function app(state = initialState, action) {
             ]
         }
 
+        case 'removeAll': {
+            return []
+        }
+
         default:
             return state
     }

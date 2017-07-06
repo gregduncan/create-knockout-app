@@ -1,6 +1,6 @@
 import ko from 'knockout'
 import store from '../store/'
-import { add } from '../actions/items'
+import { add, removeAll } from '../actions/items'
 
 export default class ViewModel {
 
@@ -8,9 +8,7 @@ export default class ViewModel {
 
         this.applicationState = ko.observable(store.getState())
 
-
         this.unsubscribe = store.subscribe(() => {
-
             this.applicationState(store.getState())
         })
 
@@ -18,14 +16,15 @@ export default class ViewModel {
         this.items = ko.pureComputed(() => {
             return this.applicationState().items
         })
-
-        this.applicationState.subscribe((newVal) => {
-            console.log(ko.toJS(newVal))
-        })
     }
 
     add() {
         store.dispatch(add(this.text()))
+        this.text('')
+    }
+
+    remove() {
+        store.dispatch(removeAll())
         this.text('')
     }
 }

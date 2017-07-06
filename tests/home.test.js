@@ -30,5 +30,11 @@ describe('## Home ViewModel', () => {
             done()
         });
 
+        it('Should remove all items', (done) => {
+
+            viewModel.remove()
+            chai.expect(viewModel.items().length).to.equal(0)
+            done()
+        });
     });
 });
