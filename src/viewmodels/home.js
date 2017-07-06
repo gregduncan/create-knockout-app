@@ -1,15 +1,32 @@
 import ko from 'knockout'
+import store from '../store/'
+import { add } from '../actions/items'
 
-export default class ViewModel{
-     
-     constructor(){         
-         this.text = ko.observable('')
-         this.items = ko.observableArray();
-     }
+export default class ViewModel {
 
-     add(){
-         this.items.push(this.text())
-         this.text('')
-     }
+    constructor() {
+
+        this.applicationState = ko.observable(store.getState())
+
+
+        this.unsubscribe = store.subscribe(() => {
+
+            this.applicationState(store.getState())
+        })
+
+        this.text = ko.observable('')
+        this.items = ko.pureComputed(() => {
+            return this.applicationState().items
+        })
+
+        this.applicationState.subscribe((newVal) => {
+            console.log(ko.toJS(newVal))
+        })
+    }
+
+    add() {
+        store.dispatch(add(this.text()))
+        this.text('')
+    }
 }
 
