@@ -17,7 +17,7 @@ describe('## Home ViewModel', () => {
 
             viewModel.text('test')
             viewModel.add()
-            chai.expect(viewModel.items().length).to.equal(1)
+            chai.expect(viewModel.items().length).to.equal(2)
             done()
         });
 
@@ -30,11 +30,5 @@ describe('## Home ViewModel', () => {
             done()
         });
 
-        it('Should remove all items', (done) => {
-
-            viewModel.items.removeAll()
-            chai.expect(viewModel.items().length).to.equal(0)
-            done()
-        });
     });
 });
