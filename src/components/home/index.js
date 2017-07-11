@@ -1,8 +1,8 @@
 import ko from 'knockout'
-import store from '../store/'
-import { add, removeAll } from '../actions/items'
+import store from '../../store/'
+import { add, removeAll } from '../../actions/items'
 
-export default class ViewModel {
+class HomeViewModel {
   constructor() {
     this.applicationState = ko.observable(store.getState())
 
@@ -26,3 +26,5 @@ export default class ViewModel {
     this.text('')
   }
 }
+
+export default { viewModel: HomeViewModel, template: require('./index.html') };

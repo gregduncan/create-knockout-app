@@ -26,7 +26,11 @@ module.exports = {
                         presets: ['env', 'stage-2']
                     },
                 }],
-            }
+            },
+            { 
+                test: /\.html$/, 
+                use: 'raw-loader' 
+            },
         ],
     },
     devServer: {
