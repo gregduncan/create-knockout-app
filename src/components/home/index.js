@@ -2,6 +2,8 @@ import ko from 'knockout'
 import store from '../../store/'
 import { add, removeAll } from '../../actions/items'
 
+const isTest = process.env.NODE_ENV === 'test'
+
 class HomeViewModel {
   constructor() {
     this.applicationState = ko.observable(store.getState())
@@ -27,5 +29,5 @@ class HomeViewModel {
   }
 }
 
-export default { viewModel: HomeViewModel, template: process.env.NODE_ENV !== 'test' ? require('./index.html') : {} };
+export default { viewModel: HomeViewModel, template: isTest ? {} : require('./index.html') };
 
