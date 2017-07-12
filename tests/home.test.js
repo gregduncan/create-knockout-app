@@ -1,14 +1,14 @@
+process.env.NODE_ENV = 'test'
+
 const chai = require('chai')
-const chaiHttp = require('chai-http')
 const should = chai.should()
 const expect = chai.expect()
 
-import vm from '../src/viewmodels/home'
-
-chai.use(chaiHttp)
+const home = require('../src/components/home')
 
 describe('## Home ViewModel', () => {
-  const viewModel = new vm()
+  
+  const viewModel = new home.default.viewModel()
 
   describe('# Add item', () => {
     it('Should add item', done => {

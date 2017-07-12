@@ -27,4 +27,5 @@ class HomeViewModel {
   }
 }
 
-export default { viewModel: HomeViewModel, template: require('./index.html') };
+export default { viewModel: HomeViewModel, template: process.env.NODE_ENV !== 'test' ? require('./index.html') : {} };
+
