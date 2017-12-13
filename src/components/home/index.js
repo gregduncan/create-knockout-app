@@ -2,6 +2,8 @@ import ko from 'knockout'
 import store from '../../store/'
 import { add, removeAll } from '../../actions/items'
 
+require('./styles.less');
+
 const isTest = process.env.NODE_ENV === 'test'
 
 class HomeViewModel {

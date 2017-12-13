@@ -27,6 +27,14 @@ module.exports = {
                     },
                 }],
             },
+            {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
+            },
+            {
+                test: /\.sass$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
             { 
                 test: /\.html$/, 
                 use: 'raw-loader' 
@@ -35,12 +43,12 @@ module.exports = {
     },
     devServer: {
         inline: true,
-        port: 3000,
+        port: 3001,
         quiet: true,
     },
     plugins: [
         new WebpackPrinter({
-            port:3000,
+            port:3001,
             experimental: true
         }),
     ],
